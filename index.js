@@ -5,6 +5,11 @@ import { setOptions } from '@storybook/addon-options';
 import { withBackgrounds } from '@storybook/addon-backgrounds';
 import { withNotes } from '@storybook/addon-notes';
 import { withKnobs } from '@storybook/addon-knobs';
+import {
+  asset,
+  path,
+  csrf_token,
+} from './twigFunctions';
 
 export const configuration = () => {
 
@@ -93,7 +98,20 @@ export const configuration = () => {
   Twig.extendFilter('markdown', function (value) {
       return converter.makeHtml(value);
   });
+
+  Twig.extendFunction('asset', function (value) {
+    return asset(value);
+  });
   
+  Twig.extendFunction('path', function (value, data) {
+    return path(value, data);
+  });
+
+  Twig.extendFunction('csrf_token', function (value) {
+    return csrf_token(value);
+  });
+
+
   addDecorator(
     withBackgrounds([
       { name: 'white', value: '#fff', default: true },
@@ -102,6 +120,7 @@ export const configuration = () => {
       { name: 'black', value: '#000' },
     ])
   );
+  
   addDecorator(withNotes);
   addDecorator(withKnobs);
 
@@ -182,6 +201,7 @@ export const configuration = () => {
 });
 
 }
+
 export const AddStories = (templateFiles, templateData) => {
   
   configuration();
@@ -212,14 +232,6 @@ export const AddStories = (templateFiles, templateData) => {
         data = Object.assign({}, subData, data);
       });
 
-      Object.keys(data).map(key => {
-        Object.keys(twigFunctions).map(name => {
-          if (key === name) {
-            data[key] = twigFunctions[name];
-          }
-        })
-      });
-
       const template = templateFiles(pathName);
       const html = template(data);
 
@@ -228,34 +240,4 @@ export const AddStories = (templateFiles, templateData) => {
         .add(name, () => html);
     }
   });
-}
-
-export const asset = value => {
-  const manifest = require('../../public/build/manifest.json');
-  const assetUrl = manifest[value];
-  
-  if (assetUrl)
-    return assetUrl;
-  return value;
-}
-
-export const path = (value, data) => {
-  const storyIndex = value.substring(value.lastIndexOf('_') + 1);
-  const pathName = value.substring(0, value.lastIndexOf('_'));
-  const storyName = pathName.substring(pathName.lastIndexOf('_') + 1);
-
-  if (storyName && storyIndex) {
-    return `?selectedKind=${storyName}&selectedStory=${storyIndex}.html`;
-  }
-  return '#';
-}
-
-export const csrf_token = value => {
-  return value + "token";
-}
-
-export const twigFunctions = {
-  "asset": asset,
-  "path": path,
-  "csrf_token": csrf_token,
 }
