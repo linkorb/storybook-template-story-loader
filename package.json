@@ -1,0 +1,40 @@
+{
+  "name": "config-addon",
+  "version": "1.5.0",
+  "description": "Config addon for twig templates",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cool-webpro17/config-addon.git"
+  },
+  "author": "Heng Sokom",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cool-webpro17/config-addon/issues"
+  },
+  "homepage": "https://github.com/cool-webpro17/config-addon/#readme",
+  "peerDependencies": {
+    "twig": "~1.10.5"
+  },
+  "dependencies": {
+    "@storybook/html": "^4.0.0-alpha.16",
+    "@storybook/addon-options": "^4.0.0-alpha.16",
+    "@storybook/addon-backgrounds": "^4.0.0-alpha.16",
+    "@storybook/addon-knobs": "^4.0.0-alpha.16",
+    "@storybook/addon-notes": "^4.0.0-alpha.16",
+    "path-parse": "^1.0.6",
+    "hasha": "^3.0.0",
+    "loader-utils": "^1.1.0",
+    "map-cache": "^0.2.2",
+    "schema-utils": "^0.4.5",
+    "twig": "^1.12.0",
+    "underscore": "^1.9.1"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0",
+    "should": "^13.2.1"
+  }
+}
