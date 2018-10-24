@@ -1,5 +1,5 @@
 {
-  "name": "config-addon",
+  "name": "addon-linkorb",
   "version": "1.5.0",
   "description": "Config addon for twig templates",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cool-webpro17/config-addon.git"
+    "url": "git+https://github.com/skyorion427/addon-linkorb.git"
   },
   "author": "Heng Sokom",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cool-webpro17/config-addon/issues"
+    "url": "https://github.com/skyorion427/addon-linkorb/issues"
   },
-  "homepage": "https://github.com/cool-webpro17/config-addon/#readme",
+  "homepage": "https://github.com/skyorion427/addon-linkorb/#readme",
   "peerDependencies": {
     "twig": "~1.10.5"
   },
