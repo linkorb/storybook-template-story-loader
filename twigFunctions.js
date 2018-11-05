@@ -1,9 +1,7 @@
-export const asset = value => {
-  const manifest = require('../../public/build/manifest.json');
-  const assetUrl = manifest[value];
-  
-  if (assetUrl)
-    return assetUrl;
+export const asset = (value, manifest) => {
+  if (manifest !== undefined) {
+    return manifest[value];
+  }
   return value;
 }
 
