@@ -13,6 +13,8 @@ import {
   csrf_token,
 } from './twigFunctions';
 
+let manifest = {};
+
 const configuration = () => {
   const converter = new showdown.Converter();
 
@@ -21,7 +23,7 @@ const configuration = () => {
   });
 
   Twig.extendFunction('asset', function (value) {
-    return asset(value);
+    return asset(value, manifest);
   });
   
   Twig.extendFunction('path', function (value, data) {
@@ -61,6 +63,10 @@ export const setConfigs = (options) => {
     selectedAddonPanel = undefined,
     enableShortcuts = true,
   } = options;
+
+  if (options[manifest] !== undefined) {
+    manifest = options[manifest];
+  }
   
   setOptions({
     /**
@@ -143,7 +149,7 @@ export const AddStories = (templateFiles, templateData, type) => {
   if (type === 'twig') {
     configuration();
   }
-  
+
   templateFiles.keys().forEach(pathName => {
     let dir = pathParse(pathName).dir.split('/').pop();
     const name = pathParse(pathName).name;
