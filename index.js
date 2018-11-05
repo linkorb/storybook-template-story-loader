@@ -45,7 +45,7 @@ const configuration = () => {
   addDecorator(withKnobs);
 }
 
-export const setOptions = (options) => {
+export const setConfigs = (options) => {
   const {
     name = '',
     url = '#',
