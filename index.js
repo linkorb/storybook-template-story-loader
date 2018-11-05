@@ -1,10 +1,10 @@
 // import { twigFunctions } from '../.storybook/helpers/TwigFunctions';
 import { addDecorator, storiesOf } from '@storybook/html';
-import pathParse from 'path-parse';
 import { setOptions } from '@storybook/addon-options';
 import { withBackgrounds } from '@storybook/addon-backgrounds';
 import { withNotes } from '@storybook/addon-notes';
 import { withKnobs } from '@storybook/addon-knobs';
+import pathParse from 'path-parse';
 const Twig = require('twig');
 const showdown = require('showdown');
 import {
@@ -139,9 +139,11 @@ export const setConfigs = (options) => {
   });
 }
 
-export const AddStories = (templateFiles, templateData) => {
-  configuration();
-
+export const AddStories = (templateFiles, templateData, type) => {
+  if (type === 'twig') {
+    configuration();
+  }
+  
   templateFiles.keys().forEach(pathName => {
     let dir = pathParse(pathName).dir.split('/').pop();
     const name = pathParse(pathName).name;
