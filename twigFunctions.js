@@ -1,5 +1,6 @@
 export const asset = (value, manifest) => {
   if (manifest !== undefined) {
+    console.log('value: ', manifest)
     return manifest[value];
   }
   return value;

@@ -64,8 +64,8 @@ export const setConfigs = (options) => {
     enableShortcuts = true,
   } = options;
 
-  if (options[manifest] !== undefined) {
-    manifest = options[manifest];
+  if (options['manifest'] !== undefined) {
+    manifest = options['manifest'];
   }
   
   setOptions({
