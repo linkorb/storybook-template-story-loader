@@ -1,5 +1,5 @@
 {
-  "name": "addon-linkorb",
+  "name": "@linkorb/storybook-template-story-loader",
   "version": "1.0.0",
   "description": "Config addon for twig templates",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/skyorion427/addon-linkorb.git"
+    "url": "git+https://github.com/linkorb/storybook-template-story-loader.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/skyorion427/addon-linkorb/issues"
+    "url": "https://github.com/linkorb/storybook-template-story-loader/issues"
   },
-  "homepage": "https://github.com/skyorion427/addon-linkorb/#readme",
+  "homepage": "https://github.com/linkorb/storybook-template-story-loader/#readme",
   "peerDependencies": {
     "twig": "~1.10.5"
   },
