@@ -104,6 +104,13 @@ const data = require.context('../src', true, /\.json$/);
 ```
 #### Types
 supported types are `handlebar`, `twig`, `html`, `md`.
+
+
+## Publishing to npm
+
+    npm login
+    npm publish --access public
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
