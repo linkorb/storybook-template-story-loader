@@ -3,7 +3,12 @@
 This addon for storybook allows to load multiple templates. \
 It supports twig, handlebar, html, markdown templates.
 
-## Getting Started
+## Adding Storybook to a project
+
+Please refer to [Adding Storybook to an existing project](doc/adding-storybook-to-an-existing-project.mds).
+
+
+## Adding the package to a storybook project
 
 To install addon:
 ```
@@ -13,6 +18,7 @@ or
 ```
 yarn add -D storybook-template-story-loader
 ```
+
 
 ### Storybook configuration for templates
 
@@ -107,6 +113,8 @@ supported types are `handlebar`, `twig`, `html`, `md`.
 
 
 ## Publishing to npm
+
+After applying enhancements, please update the version in package.json, and publish to npm:
 
     npm login
     npm publish --access public

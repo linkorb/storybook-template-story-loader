@@ -4,7 +4,8 @@
   "description": "Config addon for twig templates",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -R spec"
+    "storybook": "start-storybook -s ./public -p 6006",
+    "storybook-static": "build-storybook -c .storybook -o dist/storybook"
   },
   "repository": {
     "type": "git",
