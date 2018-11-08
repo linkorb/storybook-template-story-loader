@@ -7,11 +7,11 @@ It supports twig, handlebar, html, markdown templates.
 
 To install addon:
 ```
-npm install storybook-template-story-loader
+npm install -D storybook-template-story-loader
 ```
 or
 ```
-yarn add storybook-template-story-loader
+yarn add -D storybook-template-story-loader
 ```
 
 ### Storybook configuration for templates
