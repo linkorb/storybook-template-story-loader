@@ -5,7 +5,7 @@ It supports twig, handlebar, html, markdown templates.
 
 ## Adding Storybook to a project
 
-Please refer to [Adding Storybook to an existing project](doc/adding-storybook-to-an-existing-project.mds).
+Please refer to [Adding Storybook to an existing project](doc/adding-storybook-to-an-existing-project.md).
 
 
 ## Adding the package to a storybook project
